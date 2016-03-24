@@ -72,7 +72,9 @@ public class LevelManager : MonoBehaviour {
 		gc.EnemyPrefab = EnemyPrefab;
 		gc.EnemyPatrolPoint = EnemyPatrolPoint;
 		}
-
+	void OnDisable () {
+		GameController.OnNextLevel -= HandleOnNextLevel;
+	}
 }
 
 
