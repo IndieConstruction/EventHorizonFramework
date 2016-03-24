@@ -12,9 +12,9 @@ public class HudManager : MonoBehaviour {
 	public GameController gc;
 	public NPC npc;
 	public Player p;
-
+	bool isEnable;
 	void Awake(){
-		DontDestroyOnLoad(this);
+
 		texts = GetComponentsInChildren<Text>(); 
 		Health = texts [1];
 		NpcToFree = texts [2];
@@ -23,16 +23,22 @@ public class HudManager : MonoBehaviour {
 		GameController.OnGameStart += HandleOnStart;
 		GameController.OnGameWin += HandleOnGameWin;
 		GameController.OnNextLevel += HandleOnNextLevel;
+	
 	}
 
+	void Start () {
 
+	}
 
 	void Update () {
+	if (isEnable) {
 		UpdateHud ();
+		}
 	}
 
 	void HandleOnStart ()
 	{
+		isEnable = true;
 		gameObject.GetComponentInChildren<Text>().text = "Level" + gc.Level;
 		gameObject.GetComponentInChildren<Text> ().enabled = true; 
 	}
@@ -50,6 +56,7 @@ public class HudManager : MonoBehaviour {
 
 	void HandleOnNextLevel ()
 	{
+		isEnable = false;
 		gameObject.GetComponentInChildren<Text>().text = "New Level ";
 		gameObject.GetComponentInChildren<Text> ().enabled = true;
 	}

@@ -39,7 +39,7 @@ public class Enemy : Agent {
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
-		gameController = GameObject.FindObjectOfType<GameController>();
+		gc = GameObject.FindObjectOfType<GameController>();
 		ECurrentAiState = AiState.Patroling ;
 		targetTransform = SelectRandomPatrolPointTarget();
 	
@@ -125,8 +125,8 @@ public class Enemy : Agent {
 	/// <returns>The random target.</returns>
 	public Transform SelectRandomPatrolPointTarget(){
 		ECurrentAiState = AiState.Patroling ;
-		int randomPoint = Random.Range (0, gameController.EnemyPatrolPoint.Length -1);
-		Transform selectedEnemyPatrol = gameController.EnemyPatrolPoint [randomPoint];
+		int randomPoint = Random.Range (0, gc.EnemyPatrolPoint.Length -1);
+		Transform selectedEnemyPatrol = gc.EnemyPatrolPoint [randomPoint];
 		return selectedEnemyPatrol;
 	}
 		// si muove verso il target scelto

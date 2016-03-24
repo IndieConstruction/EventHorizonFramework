@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : Agent {
 
 
-	public bool isOver;
+//	public bool isOver;
 	public enum PlayerStates {
 		Alive,
 		Dead
@@ -76,8 +76,8 @@ public class Player : Agent {
 
 	void OnTriggerEnter (Collider other){
 		if(other.tag == "Finish"){
-			//Debug.Log("culo");
-			isOver= true;
+			gc.PlayerLevelCompleted();
+
 		}
 	}
 	void UpgradeExp (float expUpgrader) {

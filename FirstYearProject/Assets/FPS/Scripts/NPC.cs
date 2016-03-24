@@ -10,12 +10,19 @@ public class NPC : Agent  {
 		Imprisoned
 	}
 
-	void Awake(){
-
+	void OnEnable(){
+		GameController.OnGameStart += HandleOnGameStart;
 	}
+	void OnDisable () {
+		GameController.OnGameStart -= HandleOnGameStart;
+	}
+	void HandleOnGameStart ()
+	{
+		transform.position = gc.NpcSpawnPoint.position ;
+	}
+
 	void Start () {
 		CurrentNPCState = NPCStates.Imprisoned;
-		transform.position = gameController.NpcSpawnPoint.position ;
 	}
 
 	private NPCStates currentNPCState = NPCStates.Imprisoned; 
@@ -45,7 +52,7 @@ public class NPC : Agent  {
 	Player p = other.gameObject.GetComponent<Player> ();
 	Enemy e = other.gameObject.GetComponent<Enemy>();
 	if (e !=null && p== null) {
-			this.transform.position = gameController.NpcSpawnPoint.position ;
+			this.transform.position = gc.NpcSpawnPoint.position ;
 
 		}
 		if(p != null && e == null){

@@ -12,9 +12,11 @@ public class GameController : MonoBehaviour {
 	public delegate void GameEvent();
 
 	public static event GameEvent OnGameWin;
+	// evento che fa partire il gioco/livello
 	public static event GameEvent OnGameStart;
 	public static event GameEvent OnGameOver;
 	public static event GameEvent OnNextLevel;
+
 	#endregion
 
 	public Transform NpcSpawnPoint;
@@ -43,7 +45,7 @@ public class GameController : MonoBehaviour {
 
 	void Awake(){
 
-		DontDestroyOnLoad(this);
+		DontDestroyOnLoad(this.gameObject);
 		EnemySpawnCounter = 0;
 		ItemSpawnCounter = 0;
 		if (OnGameStart!= null) {
@@ -144,6 +146,14 @@ public class GameController : MonoBehaviour {
 		if (Counter >= CounterLimit) {
 		Counter = 0;
 		}
+	}
+	public void LevelLoaded () {
+				if (GameController.OnGameStart != null ) {
+					GameController.OnGameStart();
+				}
+	}
+	public void PlayerLevelCompleted () {
+		Application.LoadLevel("Level Two");
 	}
 }
 

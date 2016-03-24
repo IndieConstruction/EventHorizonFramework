@@ -5,7 +5,7 @@ public class Agent : MonoBehaviour {
 
 
 
-	public GameController gameController;
+	public GameController gc;
 	/// <summary>
 	/// Speed of movement
 	/// </summary>
@@ -31,10 +31,15 @@ public class Agent : MonoBehaviour {
 		}
 	}
 
-	
+	void Awake () {
+		if (gc == null) {
+			gc = FindObjectOfType<GameController>();
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
+
 	}
 	
 	// Update is called once per frame

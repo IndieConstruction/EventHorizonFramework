@@ -23,18 +23,19 @@ public class LevelManager : MonoBehaviour {
 	public int ItemSpawnCounter; // contatore per lo spawn degli Item
 	public int LimitSpawnItem; // limite per lo spawn dei bonus
 	// Use this for initialization
+
 	void Awake(){
-		//DontDestroyOnLoad(this);
+
 		SetupScene();
-		GameController.OnNextLevel += HandleOnNextLevel;
-		//hm = FindObjectOfType<>;
+//		GameController.OnNextLevel += HandleOnNextLevel;
+
 	}
 
-	void HandleOnNextLevel (){
-		if(player.isOver == true && npc.CurrentNPCState == NPC.NPCStates.Free){
-			Application.LoadLevel("Level Two");
-	}
-	}
+//	void HandleOnNextLevel (){
+//		if(player.isOver == true && npc.CurrentNPCState == NPC.NPCStates.Free){
+//			Application.LoadLevel("Level Two");
+//	}
+//	}
 
 	void Start () {
 
@@ -43,20 +44,20 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if (hm != null) {
-		HandleOnNextLevel ();
-		//}
+
 	}
 	void SetupScene(){
-
+		if (gc == null) {
+			gc = FindObjectOfType<GameController>();
+		}
 		switch(Level){
 		case 1 :
 			gc.NpcSpawnPoint = NpcSpawnPoint;
 			gc.NpcPrefab = NpcPrefab;
 			break;
 		case 2 :
-			gc.BossPrefab = BossPrefab;
-			gc.BossSpawnPoint = BossSpawnPoint;
+		//	gc.BossPrefab = BossPrefab;
+		//	gc.BossSpawnPoint = BossSpawnPoint;
 			break;
 		}
 		// variabili utilizzabili in entrambi i livelli
@@ -71,9 +72,12 @@ public class LevelManager : MonoBehaviour {
 		gc.EnemiesSpawnPoints = EnemiesSpawnPoints;
 		gc.EnemyPrefab = EnemyPrefab;
 		gc.EnemyPatrolPoint = EnemyPatrolPoint;
+		gc.LevelLoaded();
+
 		}
+
 	void OnDisable () {
-		GameController.OnNextLevel -= HandleOnNextLevel;
+
 	}
 }
 
