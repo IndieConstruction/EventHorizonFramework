@@ -88,7 +88,7 @@ public class Enemy : Agent {
 	
 
 	void OnTriggerExit (Collider other) {
-		
+		Debug.Log("ciao a tutti");
 		Player p = other.gameObject.GetComponent<Player> ();
 		if (p != null ) {
 			targetTransform = null;
