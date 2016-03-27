@@ -3,6 +3,18 @@ using System.Collections;
 
 public class NPC : Agent  {
 
+	#region variabili per l'audio dell'NPC
+	AudioSource audioSource;
+	public Sounds DefaultSound;
+	public AudioClip Free;
+	public AudioClip Imprisoned;
+	
+	public enum Sounds{
+		Free,
+		Imprisoned,
+	}
+	#endregion 
+
 	public Player p;
 
 	public enum NPCStates {
@@ -21,8 +33,37 @@ public class NPC : Agent  {
 		transform.position = gc.NpcSpawnPoint.position ;
 	}
 
+	void Awake(){
+		#region iscrizione degli npc agli eventi audio
+		GameController.NpcImprisond+= HandleNpcImprisond;
+		GameController.NpcFree += HandleNpcFree;
+		#endregion
+	}
+
+	#region funzioni per l'audio
+	public void PlaySound(Sounds _soundToPlay){
+		switch (_soundToPlay) {
+		case Sounds.Free:
+			audioSource.clip = Free;
+			break;
+		case Sounds.Imprisoned:
+			audioSource.clip = Imprisoned;
+			break;
+		}
+	}
+	void HandleNpcImprisond ()
+	{
+		PlaySound(Sounds.Free);
+	}
+
+	void HandleNpcFree ()
+	{
+		PlaySound(Sounds.Imprisoned);
+	}
+	#endregion
 	void Start () {
 		CurrentNPCState = NPCStates.Imprisoned;
+		//PlaySound (DefaultSound); 
 	}
 
 	private NPCStates currentNPCState = NPCStates.Imprisoned; 
@@ -49,7 +90,7 @@ public class NPC : Agent  {
 	// se entra in collisione con il nemico scompare e rispawna in cella.
 	void OnTriggerEnter (Collider other) {
 	
-	Player p = other.gameObject.GetComponent<Player> ();
+	//Player p = other.gameObject.GetComponent<Player> ();
 	Enemy e = other.gameObject.GetComponent<Enemy>();
 	if (e !=null && p== null) {
 			this.transform.position = gc.NpcSpawnPoint.position ;

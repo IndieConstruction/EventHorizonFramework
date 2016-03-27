@@ -17,6 +17,14 @@ public class GameController : MonoBehaviour {
 	public static event GameEvent OnGameOver;
 	public static event GameEvent OnNextLevel;
 
+	//eventi dell'enemy
+	public static event GameEvent EnemyAttacking;
+	public static event GameEvent EnemyIsDead;
+
+	//eventi degli NPC
+	public static event GameEvent NpcFree;
+	public static event GameEvent NpcImprisond;
+
 	#endregion
 
 	public Transform NpcSpawnPoint;

@@ -2,16 +2,23 @@ using UnityEngine;
 using System.Collections;
 
 public class Enemy : Agent {
+	#region variabili per l'audio dell'enemy
+	AudioSource audioSource;
+	public Sounds DefaultSound;
+	public AudioClip Attack;
+	public AudioClip Dead;
 
+	public enum Sounds{
+		Attack,
+		Dead,
+	}
+	#endregion 
 	// Stati del nemico
 	public enum AiState {
 		Patroling,
 		Attack,
 		Dead
 	}
-	
-
-
 
 	float patrolTimerCounter = 0; // contatore per cambio target player
 	public float PatrolTimerLimit = 2.00f;
@@ -32,9 +39,34 @@ public class Enemy : Agent {
 		}
 	}
 	void Awake () {
-
+		#region iscrizione dell'enemy agli eventi audio
+		GameController.EnemyAttacking += HandleEnemyAttacking;
+		GameController.EnemyIsDead += HandleEnemyIsDead;
+		#endregion
+		//PlaySound (DefaultSound); 
 	}
 
+	#region funzioni per l'audio
+	public void PlaySound(Sounds _soundToPlay){
+		switch (_soundToPlay) {
+		case Sounds.Attack:
+			audioSource.clip = Attack;
+			break;
+		case Sounds.Dead:
+			audioSource.clip = Dead;
+			break;
+		}
+	}
+	void HandleEnemyIsDead ()
+	{
+		PlaySound(Sounds.Dead);
+	}
+
+	void HandleEnemyAttacking ()
+	{
+		PlaySound(Sounds.Attack);
+	}
+	#endregion
 
 	// Use this for initialization
 	void Start () {
@@ -85,7 +117,15 @@ public class Enemy : Agent {
 		float newPatrolTimerLimit = Random.Range(PatrolTimerLimitMin, PatrolTimerLimitMax);
 		return newPatrolTimerLimit;
 	}
-	
+
+	void OnTriggerStay(Collider other){
+		Player p = other.gameObject.GetComponent<Player> ();
+		NPC npc = other.gameObject.GetComponent<NPC> ();
+		if (p!=null && npc!=null){
+			ECurrentAiState = AiState.Attack;
+		}
+	}
+
 
 	void OnTriggerExit (Collider other) {
 

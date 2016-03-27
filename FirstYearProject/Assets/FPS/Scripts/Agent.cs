@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Agent : MonoBehaviour {
+public class Agent : MonoBehaviour , IAttack {
 
-
+	public Agent Target {
+		get;
+		set;
+	}
+	
+	public float AttackValue {
+		get;
+		set;
+	}
 
 	public GameController gc;
 	/// <summary>
@@ -13,7 +21,6 @@ public class Agent : MonoBehaviour {
 	public string Name = "NoName";
 	public float MoveSpeed;
 	public float Health;
-	
 	public int Level = 1;
 
 /// <summary>
@@ -39,7 +46,13 @@ public class Agent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		#region event : Tiny element script tolto perchè inutlizzato.
+		// dà un valore all'attacco
+		//AttackValue = 2;
+		//Target = FindObjectOfType<Player>();
+		// attacca il Target
+		//Attack(AttackValue, Target);
+		#endregion event end
 	}
 	
 	// Update is called once per frame
@@ -76,6 +89,15 @@ public class Agent : MonoBehaviour {
 	// fai qualcosa quando muori
 	protected virtual void OnDeath () {
 
+	}
+
+	/// <summary>
+	/// Attacca con un danno specificato nel parametro.
+	/// </summary>
+	/// <param name="damage">Damage.</param>
+	public void Attack (float damage, Agent target ){
+		Debug.Log ("sto attaccando");
+		target.DecreaseHealth(damage);
 	}
 	}
 
