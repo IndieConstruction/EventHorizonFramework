@@ -1,7 +1,8 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
-	
+using System.Collections.Generic;
 public class Player : Agent {
+
 
 
 //	public bool isOver;
@@ -39,8 +40,12 @@ public class Player : Agent {
 
 	// Use this for initialization
 	void Start () {
+
 		currentPlayerState = PlayerStates.Alive;
 		exp = 0;	 
+		if (gc == null) {
+			gc = FindObjectOfType<GameController> ();
+		}
 
 	}
 
@@ -79,6 +84,8 @@ public class Player : Agent {
 			gc.PlayerLevelCompleted();
 
 		}
+
+
 	}
 	void UpgradeExp (float expUpgrader) {
 		exp = exp + expUpgrader;

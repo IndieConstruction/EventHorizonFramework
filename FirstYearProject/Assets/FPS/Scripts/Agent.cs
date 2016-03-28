@@ -3,14 +3,19 @@ using System.Collections;
 
 public class Agent : MonoBehaviour , IAttack {
 
+	private Agent target;
 	public Agent Target {
-		get;
-		set;
+		get{return target;}
+		set { 
+
+		}
 	}
-	
+	private float attackValue = 2f;
 	public float AttackValue {
-		get;
-		set;
+		get {return attackValue;}
+		set{
+
+		}
 	}
 
 	public GameController gc;

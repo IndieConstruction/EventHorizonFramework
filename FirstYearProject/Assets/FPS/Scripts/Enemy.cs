@@ -118,6 +118,7 @@ public class Enemy : Agent {
 		return newPatrolTimerLimit;
 	}
 
+
 	void OnTriggerStay(Collider other){
 		Player p = other.gameObject.GetComponent<Player> ();
 		NPC npc = other.gameObject.GetComponent<NPC> ();
@@ -139,7 +140,7 @@ public class Enemy : Agent {
 	#region State Management
 	// Setta i comportamenti in base allo stato del nemico
 	public void OnChangeState (){
-		
+//		Player p = gameObject.GetComponent<Player> ();
 		switch (ECurrentAiState) {
 			
 		case AiState.Patroling:
@@ -147,7 +148,8 @@ public class Enemy : Agent {
 			break;
 			
 		case AiState.Attack:
-			
+
+//			Attack(2f, p);
 			break;
 			
 		case AiState.Dead:

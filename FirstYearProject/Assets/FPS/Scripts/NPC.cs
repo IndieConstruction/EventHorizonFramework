@@ -30,7 +30,7 @@ public class NPC : Agent  {
 	}
 	void HandleOnGameStart ()
 	{
-		transform.position = gc.NpcSpawnPoint.position ;
+//		transform.position = gc.NpcSpawnPoint.position ;
 	}
 
 	void Awake(){

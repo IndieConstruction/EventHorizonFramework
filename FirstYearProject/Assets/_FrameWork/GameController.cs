@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 
 	//public static string GameName = "Libera Player";
 
+	protected List<Rock> Rocks = new List<Rock>();
+
 	public int Level;
 
 	#region Events declaration
@@ -162,6 +164,11 @@ public class GameController : MonoBehaviour {
 	}
 	public void PlayerLevelCompleted () {
 		Application.LoadLevel("Level Two");
+	}
+	public void RockAdded(Rock rockToAdd){
+		Rocks.Add(rockToAdd);
+
+		
 	}
 }
 
