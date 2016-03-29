@@ -56,8 +56,8 @@ public class LevelManager : MonoBehaviour {
 			gc.NpcPrefab = NpcPrefab;
 			break;
 		case 2 :
-		//	gc.BossPrefab = BossPrefab;
-		//	gc.BossSpawnPoint = BossSpawnPoint;
+			gc.BossPrefab = BossPrefab;
+			gc.BossSpawnPoint = BossSpawnPoint;
 			break;
 		}
 		// variabili utilizzabili in entrambi i livelli

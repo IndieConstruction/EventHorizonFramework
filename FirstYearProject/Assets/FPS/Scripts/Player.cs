@@ -106,6 +106,7 @@ public class Player : Agent {
 	protected override void OnDeath ()
 	{
 		base.OnDeath ();
+		currentPlayerState = PlayerStates.Dead;
 	}
 	
 }

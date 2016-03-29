@@ -27,6 +27,9 @@ public class GameController : MonoBehaviour {
 	public static event GameEvent NpcFree;
 	public static event GameEvent NpcImprisond;
 
+	//eventi per i bonus
+	public static event GameEvent OnBonusTaken;
+
 	#endregion
 
 	public Transform NpcSpawnPoint;
@@ -71,11 +74,11 @@ public class GameController : MonoBehaviour {
 	 void Update () {
 		GenericCounter ();
 		if (CanSpawnItem() == true) {
-			Debug.Log ("Il bonus può spawnare") ;
+			//Debug.Log ("Il bonus può spawnare") ;
 			RandomSpawnItems();
 		}
 		if (CanSpawnEnemy () == true) {
-			Debug.Log ("L'enemy può spawnare");
+		//	Debug.Log ("L'enemy può spawnare");
 			RandomSpawnEnemy ();
 		}
 		OnPlayerDeath ();

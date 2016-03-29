@@ -6,6 +6,7 @@ using System.Collections;
 public class SoundController : MonoBehaviour {
 
 	AudioSource audioSource;
+	public AudioClip BonusTaken;
 	public AudioClip Followed;
 	public AudioClip Blocked;
 	public AudioClip Free;
@@ -18,6 +19,12 @@ public class SoundController : MonoBehaviour {
 		GameController.OnGameOver += HandleOnGameOver;
 		GameController.OnGameWin += HandleOnGameWin;
 		GameController.OnNextLevel += HandleOnNextLevel;
+		GameController.OnBonusTaken += HandleOnBonusTaken;
+	}
+
+	void HandleOnBonusTaken ()
+	{
+		PlaySound(Sounds.BonusTaken);
 	}
 
 	void HandleOnNextLevel ()
@@ -68,6 +75,9 @@ public class SoundController : MonoBehaviour {
 		case Sounds.Win:
 			audioSource.clip = Win;
 			break;
+		case Sounds.BonusTaken :
+			audioSource.clip = BonusTaken;
+			break;
 		case Sounds.NextLevel:
 			audioSource.clip = NextLevel;
 			break;
@@ -82,6 +92,7 @@ public class SoundController : MonoBehaviour {
 		Free,
 		GameOver,
 		Win,
+		BonusTaken,
 		NextLevel
 	}
 }

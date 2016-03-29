@@ -1,22 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Agent : MonoBehaviour , IAttack {
+public class Agent : MonoBehaviour {
 
-	private Agent target;
-	public Agent Target {
-		get{return target;}
-		set { 
 
-		}
-	}
-	private float attackValue = 2f;
-	public float AttackValue {
-		get {return attackValue;}
-		set{
-
-		}
-	}
 
 	public GameController gc;
 	/// <summary>
@@ -51,13 +38,7 @@ public class Agent : MonoBehaviour , IAttack {
 
 	// Use this for initialization
 	void Start () {
-		#region event : Tiny element script tolto perchè inutlizzato.
-		// dà un valore all'attacco
-		//AttackValue = 2;
-		//Target = FindObjectOfType<Player>();
-		// attacca il Target
-		//Attack(AttackValue, Target);
-		#endregion event end
+
 	}
 	
 	// Update is called once per frame
@@ -84,7 +65,9 @@ public class Agent : MonoBehaviour , IAttack {
 	public void DecreaseHealth (float damage) {
 
 		Health = Health - damage;
+
 		if (Health <= 0){
+
 			OnDeath();
 		}
 
@@ -96,14 +79,7 @@ public class Agent : MonoBehaviour , IAttack {
 
 	}
 
-	/// <summary>
-	/// Attacca con un danno specificato nel parametro.
-	/// </summary>
-	/// <param name="damage">Damage.</param>
-	public void Attack (float damage, Agent target ){
-		Debug.Log ("sto attaccando");
-		target.DecreaseHealth(damage);
-	}
+
 	}
 
 	

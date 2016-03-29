@@ -1,12 +1,29 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : Agent {
+public class Enemy : Agent, IAttack  {
+
+	private Agent target;
+	public Agent Target {
+		get{return target;}
+		set { 
+			target = value;
+			
+		}
+	}
+	public float attackValue ;
+	public float AttackValue {
+		get {return attackValue;}
+		set{ 
+			attackValue = attackValue/2 *Level;
+			
+		}
+	}
 	#region variabili per l'audio dell'enemy
 	AudioSource audioSource;
 	public Sounds DefaultSound;
-	public AudioClip Attack;
-	public AudioClip Dead;
+	public AudioClip AttackClip;
+	public AudioClip DeadClip;
 
 	public enum Sounds{
 		Attack,
@@ -50,10 +67,10 @@ public class Enemy : Agent {
 	public void PlaySound(Sounds _soundToPlay){
 		switch (_soundToPlay) {
 		case Sounds.Attack:
-			audioSource.clip = Attack;
+			audioSource.clip = AttackClip;
 			break;
 		case Sounds.Dead:
-			audioSource.clip = Dead;
+			audioSource.clip = DeadClip;
 			break;
 		}
 	}
@@ -119,10 +136,11 @@ public class Enemy : Agent {
 	}
 
 
-	void OnTriggerStay(Collider other){
+	void OnTriggerEnter(Collider other){
 		Player p = other.gameObject.GetComponent<Player> ();
 		NPC npc = other.gameObject.GetComponent<NPC> ();
-		if (p!=null && npc!=null){
+		if (p!=null){
+			//Target = p;
 			ECurrentAiState = AiState.Attack;
 		}
 	}
@@ -130,8 +148,8 @@ public class Enemy : Agent {
 
 	void OnTriggerExit (Collider other) {
 
-		Player p = other.gameObject.GetComponent<Player> ();
-		if (p != null ) {
+		Agent agent = other.gameObject.GetComponent<Player> ();
+		if (agent != null ) {
 			targetTransform = null;
 			ECurrentAiState = AiState.Patroling;
 		}
@@ -142,14 +160,15 @@ public class Enemy : Agent {
 	public void OnChangeState (){
 //		Player p = gameObject.GetComponent<Player> ();
 		switch (ECurrentAiState) {
-			
+
 		case AiState.Patroling:
 			SelectTarget();
 			break;
 			
 		case AiState.Attack:
-
-//			Attack(2f, p);
+			AttackValue = 2f;
+			Target = FindObjectOfType<Player>();
+			Attack(AttackValue, Target);
 			break;
 			
 		case AiState.Dead:
@@ -200,7 +219,17 @@ public class Enemy : Agent {
 			Destroy (this.gameObject);
 		
 	}
-
+	/// <summary>
+	/// Attacca con un danno specificato nel parametro.
+	/// </summary>
+	/// <param name="damage">Damage.</param>
+	public void Attack (float AttackValue , Agent Target ){
+		
+	
+		
+		Target.DecreaseHealth(AttackValue);
+		
+	}
 
 
 }
