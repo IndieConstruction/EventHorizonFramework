@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 public class Player : Agent {
 
-
+	 Inventory inventory;
 
 //	public bool isOver;
 	public enum PlayerStates {
@@ -36,6 +37,7 @@ public class Player : Agent {
 		// Iscrizione all'evento GameController.OnGameStart
 		rb = GetComponent<Rigidbody> ();
 
+		inventory = GetComponentInChildren<Inventory>();
 	}
 
 	// Use this for initialization
@@ -108,5 +110,31 @@ public class Player : Agent {
 		base.OnDeath ();
 		currentPlayerState = PlayerStates.Dead;
 	}
-	
+	/// <summary>
+	/// Se esiste un'inventario te lo restituisco,altrimenti null
+	/// </summary>
+	/// <returns>The inventory.</returns>
+	public Inventory GetInventory(){
+		if (inventory != null) {
+			return inventory;
+		}
+		else {
+			return null;
+		}
+	} 
+	/// <summary>
+	/// Attack the specified hitpoint.
+	/// </summary>
+	/// <param name="hitpoint">Hitpoint.</param>
+	public void Attack(Vector3 hitpoint){
+		if(GetInventory() != null){
+			foreach (var item in inventory.Items) {
+				if(item.GetType() == typeof(Rock)){
+					Rock r = (Rock)item;
+					r.UseItem(hitpoint);
+					return;
+				}
+			}
+		} 
+	}
 }

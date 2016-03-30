@@ -1,29 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rock : MonoBehaviour {
+public class Rock : MonoBehaviour, ICollectableItem ,IThrowable{
 	Player p;
-	public GameController gc;
-	public GameObject BackPack;
+	Vector3 hitPoint;
+
 
 	void Start () {
 		if (p == null) {
 			p = FindObjectOfType<Player> ();
 		}
-		if (gc == null) {
-			gc = FindObjectOfType<GameController> ();
-		}
-		BackPack = GameObject.Find("BackPack");
 	}
 	void OnTriggerEnter ( Collider other ) {
+		Inventory inventory;
 		Player p = other.gameObject.GetComponent<Player> ();
 		if (p != null) {
-			gc.RockAdded(this);
-			AddInBackPack();
+			inventory = p.GetInventory();
+			if(inventory != null){
+				inventory.AddItem(this);
+				}
 		}
 	}
-	void AddInBackPack() {
-		transform.position = BackPack.transform.position;
-		transform.parent = BackPack.transform;
+		
+
+	public void UseItem(){
+
+	}
+	public void UseItem(Vector3 TargetPosition){
+		this.transform.position = TargetPosition ;
+		transform.parent = null;
 	}
 }

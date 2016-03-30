@@ -5,11 +5,19 @@ public class InputController : MonoBehaviour
 {
 	public float speed = 10F;
 	public float rotationSpeed = 2.0F;
-
 	float pitch;
 	float yaw;
 
 
+	void FixedUpdate(){
+
+		if(Input.GetKeyUp(KeyCode.Space)){
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, 100)){ 
+				GetComponent<Player>().Attack(hit.point);
+			}}
+	}
 	void Update()
 	{
 		float translationZ = Input.GetAxisRaw("Vertical") * speed;
