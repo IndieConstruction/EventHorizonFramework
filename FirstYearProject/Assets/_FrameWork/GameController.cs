@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour {
 
 	//public static string GameName = "Libera Player";
 
-	protected List<Rock> Rocks = new List<Rock>();
+	public List<Rock> Rocks = new List<Rock>();
 
 	public int Level;
 
