@@ -52,6 +52,9 @@ public class Player : Agent {
 	// Update is called once per frame
 	void FixedUpdate () {
 		UpdateHealth ();
+		if (Input.GetMouseButton(1)) {
+			PlayerAttack();
+		}
 		}
 			
 	/// <summary>
@@ -108,5 +111,17 @@ public class Player : Agent {
 		base.OnDeath ();
 		currentPlayerState = PlayerStates.Dead;
 	}
-	
+	void PlayerAttack () {
+		foreach ( Rock item in gc.Rocks ) {
+			Vector3 newPos = new Vector3 ( transform.position.x, transform.position.y+0.3f);
+			item.transform.position = newPos;
+			ShootRock(item);
+			Destroy ( item.gameObject,5);
+		}
+	}
+	void ShootRock( Rock rock){
+		float speed = 30;
+		rb = rock.GetComponent<Rigidbody> ();
+		rb.AddForce (transform.forward * speed);
+	}
 }
