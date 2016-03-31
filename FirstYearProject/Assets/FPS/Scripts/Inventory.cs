@@ -46,12 +46,12 @@ public interface ICollectableItem{
 */
 public interface IUsableItem{
 
-	void ThorwItem();
+	void UseItem();
 
 }
 
 public interface IThrowable : IUsableItem{
 
-	void ThorwItem(Vector3 TargetPosition);
+	void UseItem(Vector3 TargetPosition);
 
 }
