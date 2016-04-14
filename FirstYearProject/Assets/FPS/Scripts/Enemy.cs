@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 public class Enemy : Agent, IAttack  {
 
 	private Agent target;

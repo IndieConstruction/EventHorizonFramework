@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using EH.FrameWork;
 //Gestore del livello in caricamento con le sue variabili
 public class LevelManager : MonoBehaviour {
 
