@@ -138,7 +138,7 @@ public class Enemy : Agent, IAttack  {
 
 
 	void OnTriggerEnter(Collider other){
-		Player p = other.gameObject.GetComponent<Player> ();
+		BasePlayer p = other.gameObject.GetComponent<BasePlayer> ();
 		NPC npc = other.gameObject.GetComponent<NPC> ();
 		if (p!=null){
 			//Target = p;
@@ -149,7 +149,7 @@ public class Enemy : Agent, IAttack  {
 
 	void OnTriggerExit (Collider other) {
 
-		Agent agent = other.gameObject.GetComponent<Player> ();
+		Agent agent = other.gameObject.GetComponent<BasePlayer> ();
 		if (agent != null ) {
 			targetTransform = null;
 			ECurrentAiState = AiState.Patroling;
@@ -168,7 +168,7 @@ public class Enemy : Agent, IAttack  {
 			
 		case AiState.Attack:
 			AttackValue = 2f;
-			Target = FindObjectOfType<Player>();
+			Target = FindObjectOfType<BasePlayer>();
 			Attack(AttackValue, Target);
 			break;
 			

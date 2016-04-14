@@ -13,7 +13,7 @@ public class HudManager : MonoBehaviour {
 	// Use this for initialization
 	public GameController gc;
 	//public NPC npc;
-	public Player p;
+	public BasePlayer p;
 	bool isEnable;
 	void Awake(){
 

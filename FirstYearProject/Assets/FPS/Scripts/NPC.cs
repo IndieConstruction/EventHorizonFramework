@@ -16,7 +16,7 @@ public class NPC : Agent  {
 	}
 	#endregion 
 
-	public Player p;
+	public BasePlayer p;
 
 	public enum NPCStates {
 		Free,

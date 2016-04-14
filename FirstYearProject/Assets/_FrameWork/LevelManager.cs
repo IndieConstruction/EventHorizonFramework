@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour {
 
 	public GameController gc;
 	//public NPC npc;
-	public Player player;
+	public BasePlayer player;
 	//setting dei liveli
 	public int Level;
 	public Transform NpcSpawnPoint ;

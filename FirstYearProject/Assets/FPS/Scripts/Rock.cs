@@ -3,18 +3,18 @@ using System.Collections;
 using EH.FrameWork;
 namespace EH.FPS {
 public class Rock : MonoBehaviour, ICollectableItem ,IThrowable{
-	Player p;
+	BasePlayer p;
 	Vector3 rockTarget;
 	float movespeed = 2f;
 
 	void Start () {
 		if (p == null) {
-			p = FindObjectOfType<Player> ();
+			p = FindObjectOfType<BasePlayer> ();
 		}
 	}
 	void OnTriggerEnter ( Collider other ) {
 		Inventory inventory;
-		Player p = other.gameObject.GetComponent<Player> ();
+		BasePlayer p = other.gameObject.GetComponent<BasePlayer> ();
 		if (p != null) {
 			inventory = p.GetInventory();
 			if(inventory != null){

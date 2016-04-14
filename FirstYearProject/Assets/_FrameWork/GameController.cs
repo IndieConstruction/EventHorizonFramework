@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour {
 	public GameObject NpcPrefab;
 	public Transform BossSpawnPoint;
 	public GameObject BossPrefab;
-	public Player p ;
+	public BasePlayer p ;
 
 	public GameObject[] ItemsPrefabs;
 	public Transform[] ItemsSpawnPoints; // array di spawnBonus
@@ -177,7 +177,7 @@ public class GameController : MonoBehaviour {
 
 
 	void OnPlayerDeath(){
-		if (p.CurrentPlayerState == Player.PlayerStates.Dead) {
+		if (p.CurrentPlayerState == BasePlayer.PlayerStates.Dead) {
 			OnGameOver();
 		}
 	}

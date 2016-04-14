@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 namespace EH.FrameWork {
-public class Player : Agent {
+public class BasePlayer : Agent {
 
 	 Inventory inventory;
 
