@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
-
-
+using EH.FrameWork;
+namespace EH.FPS{
 public class Enemy : Agent, IAttack  {
 
 	private Agent target;
@@ -233,4 +233,5 @@ public class Enemy : Agent, IAttack  {
 	}
 
 
+}
 }

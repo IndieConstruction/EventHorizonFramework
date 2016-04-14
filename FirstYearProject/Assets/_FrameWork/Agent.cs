@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-namespace EH.FPS {
+namespace EH.FrameWork {
 public class Agent : MonoBehaviour {
 
 
@@ -84,5 +84,5 @@ public class Agent : MonoBehaviour {
 
 	}
 }
-	
+
 

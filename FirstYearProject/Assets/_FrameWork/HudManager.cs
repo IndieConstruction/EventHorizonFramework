@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using EH.FrameWork;
+
+namespace EH.FrameWork{
 
 public class HudManager : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class HudManager : MonoBehaviour {
 	public Text Exp;
 	// Use this for initialization
 	public GameController gc;
-	public NPC npc;
+	//public NPC npc;
 	public Player p;
 	bool isEnable;
 	void Awake(){
@@ -63,7 +64,7 @@ public class HudManager : MonoBehaviour {
 	}
 	void UpdateHud (){
 		Health.text = "Health : " + p.Health ;
-		NpcToFree.text = "Npc In Spawn : " + npc.name ;
+		
 		Exp.text = "Experience : " + p.exp;
 	}
 	void OnDisable() {
@@ -71,4 +72,5 @@ public class HudManager : MonoBehaviour {
 		GameController.OnGameWin -= HandleOnGameWin;
 		GameController.OnNextLevel -= HandleOnNextLevel;
 	}
+}
 }

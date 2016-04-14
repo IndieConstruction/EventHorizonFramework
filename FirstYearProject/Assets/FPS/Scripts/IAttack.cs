@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using EH.FrameWork;
 namespace EH.FPS {
 public interface IAttack{
 

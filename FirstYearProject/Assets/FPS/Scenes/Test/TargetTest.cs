@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace EH.FPS {
 public class TargetTest : MonoBehaviour {
 	public Rock rock;
 	public Rock rcok1;
@@ -14,4 +14,5 @@ public class TargetTest : MonoBehaviour {
 	void Update () {
 	
 	}
+}
 }

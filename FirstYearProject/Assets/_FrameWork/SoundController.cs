@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using EH.FrameWork;
+namespace EH.FrameWork{
 /// <summary>
 /// Conferisce la capacità al player di emettere suoni
 /// </summary>
@@ -96,4 +96,5 @@ public class SoundController : MonoBehaviour {
 		BonusTaken,
 		NextLevel
 	}
+}
 }

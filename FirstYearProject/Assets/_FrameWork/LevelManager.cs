@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using EH.FrameWork;
+namespace EH.FrameWork{
 //Gestore del livello in caricamento con le sue variabili
 public class LevelManager : MonoBehaviour {
 
 
 	public GameController gc;
-	public NPC npc;
+	//public NPC npc;
 	public Player player;
 	//setting dei liveli
 	public int Level;
@@ -95,5 +95,5 @@ public class LevelManager : MonoBehaviour {
 
 	}
 }
-
+}
 

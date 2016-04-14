@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Gestisce gli oggetti collezionabili al proprio interno
 /// </summary>
-namespace EH.FPS {
+namespace EH.FrameWork {
 public class Inventory : MonoBehaviour {
 	/* TODO :
 	-Definizione di item

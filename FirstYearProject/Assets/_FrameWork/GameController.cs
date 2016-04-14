@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+namespace EH.FrameWork {
 public class GameController : MonoBehaviour {
 
 	public enum GameStates
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
 
 	//public static string GameName = "Libera Player";
 
-	public List<Rock> Rocks = new List<Rock>();
+	
 
 	public int Level;
 
@@ -208,11 +208,7 @@ public class GameController : MonoBehaviour {
 	public void PlayerLevelCompleted () {
 		Application.LoadLevel("Level Two");
 	}
-	public void RockAdded(Rock rockToAdd){
-		Rocks.Add(rockToAdd);
 
-		
-	}
 }
-
+}
 

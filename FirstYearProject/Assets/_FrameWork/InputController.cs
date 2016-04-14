@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using EH.FrameWork;
+namespace EH.FrameWork {
 
 public class InputController : MonoBehaviour
 {
@@ -12,14 +12,14 @@ public class InputController : MonoBehaviour
 
 	void FixedUpdate(){
 
-		if(Input.GetKeyUp(KeyCode.Space)){
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, 100)){ 
-
-				GetComponent<Player>().Attack(hit.point);
-
-			}}
+//		if(Input.GetKeyUp(KeyCode.Space)){
+//			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+//			RaycastHit hit;
+//			if (Physics.Raycast(ray, out hit, 100)){ 
+//
+//				GetComponent<Player>().Attack(hit.point);
+//
+//			}}
 	}
 	void Update()
 	{
@@ -56,4 +56,5 @@ public class InputController : MonoBehaviour
 			transform.eulerAngles = new Vector3(-pitch, yaw, 0f);
 		}
 	}
+}
 }

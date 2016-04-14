@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-namespace EH.FPS {
+namespace EH.FrameWork {
 public class Player : Agent {
 
 	 Inventory inventory;
@@ -127,16 +127,6 @@ public class Player : Agent {
 	/// Attack the specified hitpoint.
 	/// </summary>
 	/// <param name="hitpoint">Hitpoint.</param>
-	public void Attack(Vector3 hitpoint){
-		if(GetInventory() != null){
-			foreach (var item in inventory.Items) {
-				if(item.GetType() == typeof(Rock)){
-					Rock r = (Rock)item;
-					r.UseItem(hitpoint);
-					return;
-				}
-			}
-		} 
-	}
+
 }
 }
