@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+namespace EH.FPS {
 public class Agent : MonoBehaviour {
 
 
@@ -81,6 +83,6 @@ public class Agent : MonoBehaviour {
 
 
 	}
-
+}
 	
 

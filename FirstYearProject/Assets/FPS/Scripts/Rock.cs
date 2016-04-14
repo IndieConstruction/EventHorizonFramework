@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace EH.FPS {
 public class Rock : MonoBehaviour, ICollectableItem ,IThrowable{
 	Player p;
 	Vector3 hitPoint;
@@ -30,4 +30,5 @@ public class Rock : MonoBehaviour, ICollectableItem ,IThrowable{
 		this.transform.position = TargetPosition ;
 		transform.parent = null;
 	}
+}
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace EH.FPS {
 public interface IAttack{
 
 	Agent Target {
@@ -14,4 +14,5 @@ public interface IAttack{
 	}
 
 	void Attack (float damage, Agent target);
+}
 }

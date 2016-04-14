@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+namespace EH.FPS {
 public class Player : Agent {
 
 	 Inventory inventory;
@@ -137,4 +138,5 @@ public class Player : Agent {
 			}
 		} 
 	}
+}
 }

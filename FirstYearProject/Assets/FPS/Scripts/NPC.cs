@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+namespace EH.FPS {
 public class NPC : Agent  {
 
 	#region variabili per l'audio dell'NPC
@@ -125,4 +125,5 @@ public class NPC : Agent  {
 
 		}
 	}
+}
 }

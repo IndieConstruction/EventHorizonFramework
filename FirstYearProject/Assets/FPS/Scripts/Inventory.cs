@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Gestisce gli oggetti collezionabili al proprio interno
 /// </summary>
-
+namespace EH.FPS {
 public class Inventory : MonoBehaviour {
 	/* TODO :
 	-Definizione di item
@@ -54,4 +54,5 @@ public interface IThrowable : IUsableItem{
 
 	void UseItem(Vector3 TargetPosition);
 
+}
 }
