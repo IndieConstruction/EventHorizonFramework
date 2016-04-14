@@ -7,10 +7,10 @@ public class Obstacle : MonoBehaviour, IItem {
 		GameObject obstacle;
 		public GameObject ItemGameObject {
 			get{
-				return obstacle;
+				if (obstacle != null) {
+					obstacle = this.gameObject;
 				}
-			set{
-				obstacle = this.gameObject;
+				return obstacle;
 				}
 			}
 		/// <summary>

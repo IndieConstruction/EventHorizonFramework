@@ -43,12 +43,15 @@ public class ItemSpawner : MonoBehaviour {
 
 }
 
-// interfaccia Item che contiene una funzione per la collisione
+ 
+/// <summary>
+///interfaccia Item che contiene una funzione per la collisione, per riempire proprietà vedi Obstacle.cs
+/// </summary>
 namespace EH.FrameWork {
 public interface IItem {
 	 GameObject ItemGameObject {
 		get;
-		set;
+		//set;
 	}
 	void OnTriggerEnter ( Collider other);
 }
