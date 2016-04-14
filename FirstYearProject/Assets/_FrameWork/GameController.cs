@@ -4,6 +4,27 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
+	public enum GameStates
+	{	Undefined,
+		MainMenu,
+		Loading,
+		LevelPlay,
+		LevelEnd,
+	}
+	 
+
+	private GameStates gameState;
+	public GameStates GameState {
+		get{
+			return gameState;
+		}
+		set{
+			gameState = value;
+		}
+
+	}
+
+
 	//public static string GameName = "Libera Player";
 
 	public List<Rock> Rocks = new List<Rock>();
@@ -12,10 +33,17 @@ public class GameController : MonoBehaviour {
 
 	#region Events declaration
 	public delegate void GameEvent();
+	//eventi base del gioco.
+	public static event GameEvent OnGameStart;
+	public static event GameEvent OnGameEnd;
+	public static event GameEvent OnLoadLevel;
+	public static GameEvent OnLoadLevelComplete;
+	public static event GameEvent OnPlayLevel;
+	public static event GameEvent OnLevelEnd;
 
 	public static event GameEvent OnGameWin;
 	// evento che fa partire il gioco/livello
-	public static event GameEvent OnGameStart;
+
 	public static event GameEvent OnGameOver;
 	public static event GameEvent OnNextLevel;
 
@@ -57,13 +85,28 @@ public class GameController : MonoBehaviour {
 
 
 	void Awake(){
-
+		GameController.OnLoadLevel += HandleOnLoadLevel;
+		GameController.OnGameStart += HandleOnGameStart;
 		DontDestroyOnLoad(this.gameObject);
 		EnemySpawnCounter = 0;
 		ItemSpawnCounter = 0;
 		if (OnGameStart!= null) {
-		OnGameStart();
+			OnGameStart();
 		}
+	}
+
+	void HandleOnLoadLevel ()
+	{
+		GameState = GameStates.Loading;
+
+	}
+	/// <summary>
+	/// Evento che avviene all'avvio del gioco gestendo il flusso che deve seguire.Ad esempio cambiare lo stato del gioco
+	/// </summary>
+	void HandleOnGameStart ()
+	{
+		GameState = GameStates.MainMenu;
+		//fai partire la scena del MainMenu.
 	}
 
 	void Start(){
@@ -73,9 +116,10 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	 void Update () {
 		GenericCounter ();
+		//TODO : da eliminare
 		if (CanSpawnItem() == true) {
 			//Debug.Log ("Il bonus può spawnare") ;
-			RandomSpawnItems();
+			//RandomSpawnItems();
 		}
 		if (CanSpawnEnemy () == true) {
 		//	Debug.Log ("L'enemy può spawnare");
@@ -160,11 +204,7 @@ public class GameController : MonoBehaviour {
 		Counter = 0;
 		}
 	}
-	public void LevelLoaded () {
-				if (GameController.OnGameStart != null ) {
-					GameController.OnGameStart();
-				}
-	}
+
 	public void PlayerLevelCompleted () {
 		Application.LoadLevel("Level Two");
 	}

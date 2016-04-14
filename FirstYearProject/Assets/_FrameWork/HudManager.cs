@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using EH.FrameWork;
 
 public class HudManager : MonoBehaviour {
 
@@ -20,11 +21,11 @@ public class HudManager : MonoBehaviour {
 		NpcToFree = texts [2];
 		Exp = texts [3];
 		GameController.OnGameOver += HandleOnGameOver;
-		GameController.OnGameStart += HandleOnStart;
 		GameController.OnGameWin += HandleOnGameWin;
 		GameController.OnNextLevel += HandleOnNextLevel;
-	
+		GameController.OnLoadLevelComplete += HandleOnLoadLevelComplete;
 	}
+	
 
 	void Start () {
 
@@ -36,7 +37,7 @@ public class HudManager : MonoBehaviour {
 		}
 	}
 
-	void HandleOnStart ()
+	void HandleOnLoadLevelComplete ()
 	{
 		isEnable = true;
 		gameObject.GetComponentInChildren<Text>().text = "Level" + gc.Level;
@@ -67,7 +68,6 @@ public class HudManager : MonoBehaviour {
 	}
 	void OnDisable() {
 		GameController.OnGameOver -= HandleOnGameOver;
-		GameController.OnGameStart -= HandleOnStart;
 		GameController.OnGameWin -= HandleOnGameWin;
 		GameController.OnNextLevel -= HandleOnNextLevel;
 	}

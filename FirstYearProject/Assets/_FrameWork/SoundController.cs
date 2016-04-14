@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using EH.FrameWork;
 /// <summary>
 /// Conferisce la capacità al player di emettere suoni
 /// </summary>

@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using EH.FrameWork;
 
 public class InputController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class InputController : MonoBehaviour
 	public float rotationSpeed = 2.0F;
 	float pitch;
 	float yaw;
-
+//	Vector3 target;
 
 	void FixedUpdate(){
 
@@ -15,7 +16,9 @@ public class InputController : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, 100)){ 
+
 				GetComponent<Player>().Attack(hit.point);
+
 			}}
 	}
 	void Update()

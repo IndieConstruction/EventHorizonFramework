@@ -22,16 +22,7 @@ public class NPC : Agent  {
 		Imprisoned
 	}
 
-	void OnEnable(){
-		GameController.OnGameStart += HandleOnGameStart;
-	}
-	void OnDisable () {
-		GameController.OnGameStart -= HandleOnGameStart;
-	}
-	void HandleOnGameStart ()
-	{
-//		transform.position = gc.NpcSpawnPoint.position ;
-	}
+
 
 	void Awake(){
 		#region iscrizione degli npc agli eventi audio

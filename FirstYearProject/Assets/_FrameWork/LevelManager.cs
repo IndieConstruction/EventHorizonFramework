@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using EH.FrameWork;
+//Gestore del livello in caricamento con le sue variabili
 public class LevelManager : MonoBehaviour {
 
 
@@ -18,18 +19,28 @@ public class LevelManager : MonoBehaviour {
 	public GameObject[] ItemsPrefab;
 	public GameObject BossPrefab;
 	public Transform BossSpawnPoint;
-	public int EnemySpawnCounter; // contatore di nemici
+	public int EnemySpawnCounter; // contatore di nemici in scena
 	public int LimitSpawnEnemy; // limite per lo spawn dei nemici
 	public int ItemSpawnCounter; // contatore per lo spawn degli Item
 	public int LimitSpawnItem; // limite per lo spawn dei bonus
 	// Use this for initialization
 
 	void Awake(){
-
+		GameController.OnLoadLevel += HandleOnLoadLevel;
 		SetupScene();
 //		GameController.OnNextLevel += HandleOnNextLevel;
 
 	}
+
+	void HandleOnLoadLevel ()
+	{
+		SetupScene();
+		if(GameController.OnLoadLevelComplete != null){
+			GameController.OnLoadLevelComplete();
+		}
+	}
+
+
 
 //	void HandleOnNextLevel (){
 //		if(player.isOver == true && npc.CurrentNPCState == NPC.NPCStates.Free){
@@ -46,6 +57,10 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 
 	}
+
+	/// <summary>
+	/// Setta le variabili specifiche di ogni livello,e quelle comuni fuori dallo SwitchCase.
+	/// </summary>
 	void SetupScene(){
 		if (gc == null) {
 			gc = FindObjectOfType<GameController>();
@@ -72,7 +87,7 @@ public class LevelManager : MonoBehaviour {
 		gc.EnemiesSpawnPoints = EnemiesSpawnPoints;
 		gc.EnemyPrefab = EnemyPrefab;
 		gc.EnemyPatrolPoint = EnemyPatrolPoint;
-		gc.LevelLoaded();
+
 
 		}
 
