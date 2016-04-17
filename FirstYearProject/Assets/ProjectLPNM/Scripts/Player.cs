@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace EH.LPNM{
 public class Player : MonoBehaviour {
 
 	// Use this for initialization
@@ -12,4 +12,5 @@ public class Player : MonoBehaviour {
 	void Update () {
 	
 	}
+}
 }

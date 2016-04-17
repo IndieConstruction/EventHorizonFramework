@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+namespace EH.LPNM{
 public class RoadManager : MonoBehaviour   {
 
 
@@ -68,4 +69,5 @@ public class RoadManager : MonoBehaviour   {
 		}
 	}
 	
+}
 }

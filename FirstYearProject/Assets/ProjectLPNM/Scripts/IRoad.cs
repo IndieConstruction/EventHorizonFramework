@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace EH.LPNM{
 public interface IRoad{
 
 	GameObject Road {
@@ -16,4 +16,5 @@ public interface IRoad{
 
 		
 	
+}
 }
