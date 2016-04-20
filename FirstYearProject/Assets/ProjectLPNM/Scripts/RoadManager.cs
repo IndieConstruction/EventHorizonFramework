@@ -11,13 +11,11 @@ public class RoadManager : MonoBehaviour   {
 	/// </summary>
 	public int MaxRoadsInGame = 6;
 	/// <summary>
-	/// Lista gameobject totali random da prendere dalla lista delle mesh.
+	/// Lista gameobject totali random da prendere dalla lista delle texture.
 	/// </summary>
-	
-	 
-	public GameObject[] RoadsMesh ;
+	public List <GameObject> RoadsPrefabs = new List<GameObject>();
 
-	float RoadLenght = 50;
+	float RoadLenght = 10;
 	/// <summary>
 	/// Lista di GameObject in scena.
 	/// </summary>
@@ -31,11 +29,13 @@ public class RoadManager : MonoBehaviour   {
 
 	}
 
-	void Update(){
-			float speed =15;
-			transform.Translate (Vector3.back * Time.deltaTime * speed);
+	void update(){
+
 	}
 
+	void fixedUpdate(){
+
+	}
 
 	
 	/// <summary>
@@ -43,30 +43,31 @@ public class RoadManager : MonoBehaviour   {
 	/// </summary>
 	/// <param name="objectToReposition">Object to reposition.</param>
 	/// <param name="newPosition">New position.</param>
-	public void Reposition(GameObject objectToReposition){
-		//int ListRoadsLenght = Roads.Count -1;
+	public void Reposition(GameObject objectToReposition, Vector3 newPosition){
+		int ListRoadsLenght = Roads.Count -1;
 		Vector3 ActualRoadPosition = objectToReposition.transform.position;
-		objectToReposition.transform.position =new Vector3 (ActualRoadPosition.x,ActualRoadPosition.y,ActualRoadPosition.z + (RoadLenght*2	));
-			Roads.Remove (this.gameObject);
+		objectToReposition.transform.position =new Vector3 (ActualRoadPosition.x,ActualRoadPosition.y,ActualRoadPosition.z + (RoadLenght*ListRoadsLenght));
 	}
-
-	public void OnTriggerEnter(Collider other){
-		Reposition (this.gameObject);
-		RandomRoads ();
-	}
-
 	/// <summary>
-	/// Sceglie un indice a caso nell'array RoadMesh
+	/// Cicla la liste delle Road e le aggiunge al contatore
 	/// </summary>
-	void RandomRoads (){
-
-		// sceglie un indice a caso nell'array RoadMesh
-		int randomMesh = Random.Range (0, RoadsMesh.Length -1);
-		// assegna l'indice scelto al gameobject ChosenRoad
-		GameObject ChosenRoad = RoadsMesh [randomMesh];
-		Roads.Add (ChosenRoad);
+	/// <param name="roadsToAdd">Roads to add.</param>
+	public void RoadsCounter(GameObject roadsToAdd){
+		foreach (var item in Roads) {
+			Debug.Log("Sto ciclando e aggiungo cose");
+			Roads.Add (roadsToAdd);
+		}
 
 	}
-
+	/// <summary>
+	/// Cicla la lista delle RoadTexture e le aggiunge al contatore
+	/// </summary>
+	/// <param name="roadsPrefabToAd">Roads prefab to ad.</param>
+	public void RandomSpawnRoadTexture(GameObject roadsPrefabToAdd){
+		for (int i = 0; i < RoadsPrefabs.Count; i++) {
+			RoadsPrefabs.Add (roadsPrefabToAdd);
+		}
+	}
+	
 }
 }

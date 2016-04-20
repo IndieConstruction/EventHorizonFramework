@@ -2,12 +2,7 @@
 using System.Collections;
 namespace EH.LPNM{
 public class InputController : MonoBehaviour {
-
-	public float Speed = 1 ;
-	public Vector3 PositionW;
-	public Vector3 PositionA;
-	public Vector3 PositionS;
-	public Vector3 PositionD;
+		float speed = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -20,22 +15,26 @@ public class InputController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-			if(Input.GetKeyUp(KeyCode.W)){
-				PositionW.x += Speed * Time.deltaTime;
-				transform.position = PositionW;
+			if(Input.GetMouseButtonDown(1)){
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				RaycastHit hit;
+				if (Physics.Raycast(ray, out hit, 100)){ 
+					Debug.Log ("Sto Raycastando");
+					transform.Translate(Vector3.forward*speed*Time.deltaTime);
+				}
 			}
-			if(Input.GetKeyUp(KeyCode.A)){
-				PositionA.x += Speed * Time.deltaTime;
-				transform.position = PositionA;
-			}
-			if(Input.GetKeyUp(KeyCode.S)){
-				PositionS.x += Speed * Time.deltaTime;
-				transform.position = PositionS;
-			}
-			if(Input.GetKeyUp(KeyCode.D)){
-				PositionD.x += Speed * Time.deltaTime;
-				transform.position = PositionD;
-			}
+			Move ();
 	}
+		void Move () {
+			float speed = 5.0f;
+			float translationZ = Input.GetAxisRaw("Vertical") *speed;
+			float translationX = Input.GetAxisRaw("Horizontal") * speed;
+			translationZ *= Time.deltaTime;
+			translationX *= Time.deltaTime;
+			
+			transform.Translate(translationX, 0, 0);
+			transform.Translate(0, translationZ, 0);
+			
+		}
 	}
 }
