@@ -22,13 +22,16 @@ public class PercentageCalcolation : MonoBehaviour {
 				
 		int result = Random.Range (1, 101);
 			if (result <= DistanceX) { 
+			//punteggio,suono etc.
 			Debug.LogFormat ("Perfect! {0} ", result); //format permette di mettere le graffe, e di riempirle con cio' che scrivo dopo
 		}
 		else if (result>DistanceX && result<DistanceY ) { 
 			Debug.LogFormat ("Good! {0} ", result); 
+				//punteggio,suono etc.
 		}
 		else if (result >= DistanceY) { 
-			Debug.LogFormat ("Che schifo! {0}",result); 	
+			Debug.LogFormat ("Che schifo! {0}",result); 
+				//punteggio,suono etc.
 		}
 }
 }
