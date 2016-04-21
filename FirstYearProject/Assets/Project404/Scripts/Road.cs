@@ -2,11 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 namespace EH.Project404{
-<<<<<<< HEAD
 	public class Road : MonoBehaviour, IMove  {
-=======
-	public class Road : MonoBehaviour   {
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 		
 		
 		
@@ -21,7 +17,6 @@ namespace EH.Project404{
 		/// </summary>
 		List <GameObject> Roads = new List<GameObject>();
 		
-<<<<<<< HEAD
 
 		
 		void Update(){
@@ -32,22 +27,6 @@ namespace EH.Project404{
 			float speed =15;
 			transform.Translate (Vector3.back * Time.deltaTime * speed);
 		}
-=======
-		void Awake (){
-			
-		}
-		
-		void Start(){
-			
-		}
-		
-		void Update(){
-			float speed =15;
-			transform.Translate (Vector3.back * Time.deltaTime * speed);
-		}
-
-		
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 		
 		/// <summary>
 		/// Calcolo il punto di riposizionamento della Road da riposizionare calcolandola così: posizione della road + (lunghezzaRoad * (lunghezza della lista delle roads -1)).
@@ -61,18 +40,10 @@ namespace EH.Project404{
 		}
 
 		public void OnTriggerEnter(Collider other){
-<<<<<<< HEAD
 			//Reposition (this.gameObject);
-=======
-			Reposition (this.gameObject);
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 		}
 
 
 
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092

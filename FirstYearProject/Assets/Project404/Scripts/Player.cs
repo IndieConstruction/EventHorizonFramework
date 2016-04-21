@@ -23,7 +23,6 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 			Move ();
-<<<<<<< HEAD
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				PlayerDimension --;
 				Vector3 vector = new Vector3(0.1f, 0.1f, 0.1f);
@@ -33,18 +32,11 @@ public class Player : MonoBehaviour {
 				Jump();
 			}
 
-=======
-			DecreaseScale ();
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 	}
 
 		//movimento della sfera
 	void Move () {
-<<<<<<< HEAD
 			float speed = 4.0f;
-=======
-			float speed = 5.0f;
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 			//float translationZ = Input.GetAxisRaw("Vertical") * speed;
 			float translationX = Input.GetAxisRaw("Horizontal") * speed;
 			//translationZ *= Time.deltaTime;
@@ -56,7 +48,6 @@ public class Player : MonoBehaviour {
 		}
 
 		void OnTriggerEnter ( Collider other ) {
-<<<<<<< HEAD
 
 
 
@@ -70,19 +61,6 @@ public class Player : MonoBehaviour {
 		}
 		public void Jump () {
 			rb.AddForce (Vector3.up * Time.deltaTime * speed);
-=======
-			Bonus b = other.gameObject.GetComponent<Bonus> ();
-			if (b != null) {
-				transform.localScale += new Vector3(0.3f, 0.3f, 0.3f);
-
-				Destroy(b.gameObject);
-		}
-		}
-		void DecreaseScale () {
-			if (Input.GetKeyDown(KeyCode.Space)) {
-				transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
-			}
->>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
 		}
 	}
 }
