@@ -24,21 +24,8 @@ public class CollisionController : MonoBehaviour {
 	void Update () {
 	
 	}
-
-
-	public void OnCollisionStatus(){
-		switch (switch_on) {
-		case 1:
-				
-				break;
-		case 2: 
-
-			break;
-		case 3: 
 	
-			break;
-		}
-
-	}
 
 }
+
+
