@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
-<<<<<<< HEAD
 	void FixedUpdate(){
 
 	
@@ -26,7 +25,4 @@ public class Player : MonoBehaviour {
 			//}
 		}
 	}
-=======
->>>>>>> 58208bcc4271446c657d22ee7fa7ca587100b38b
-}
 }
