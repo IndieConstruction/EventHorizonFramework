@@ -2,16 +2,11 @@
 using System.Collections;
 namespace EH.LPNM{
 public class InputController : MonoBehaviour {
-		public float speed = 5;
-		public string TagName = "Terrain";
-		Transform t;
-		//Vector3 startPosition;
-		Transform target;
-		
-		void Start() {
-			t = transform;
-			target = transform;
-		}
+
+	// Use this for initialization
+	void Start () {
+	
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,31 +14,18 @@ public class InputController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-			if (Input.GetMouseButtonDown(0)) {
-				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-				RaycastHit hit;
-				
-				if (Physics.Raycast(ray, out hit)) {
-					if (hit.collider.gameObject.tag != TagName)
-						return;
+			if(Input.GetKeyUp(KeyCode.W)){
 
-					target.position = hit.point;
-					Debug.Log ("Sto Raycatando");
-
-				}
 			}
-			Move ();
+			if(Input.GetKeyUp(KeyCode.A)){
+			
+			}
+			if(Input.GetKeyUp(KeyCode.S)){
+			
+			}
+			if(Input.GetKeyUp(KeyCode.D)){
+
+			}
 	}
-		void Move () {
-			float speed = 5.0f;
-			float translationZ = Input.GetAxisRaw("Vertical") *speed;
-			float translationX = Input.GetAxisRaw("Horizontal") * speed;
-			translationZ *= Time.deltaTime;
-			translationX *= Time.deltaTime;
-			
-			transform.Translate(translationX, 0, 0);
-			transform.Translate(0, translationZ, 0);
-			
-		}
 	}
 }

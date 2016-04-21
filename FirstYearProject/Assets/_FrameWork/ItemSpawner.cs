@@ -3,23 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 namespace EH.FrameWork {
 public class ItemSpawner : MonoBehaviour {
-		string levelName = "bonus";
+	//	string levelName = "bonus";
 		public List<IItem> Items = new List<IItem>();
 		public Transform[] ItemsSpawnPoints; // array di spawnPoints
 	// Use this for initialization
 	void Start () {
 
-			// auto
-			for (int i = 0; i < 4; i++) {
-				// fa lo spawn 
-				GameObject g = Resources.Load<GameObject>(levelName + "/0 " + i);
-			
-				var goChecked = g.GetComponent<IItem>();
-				if ( goChecked != null) {
-					Items.Add(goChecked);
-				}
-			}
-			RandomSpawnItems ();
+//			// auto
+//			for (int i = 0; i < 4; i++) {
+//				// fa lo spawn 
+//				GameObject g = Resources.Load<GameObject>(levelName + "/0 " + i);
+//			
+//				var goChecked = g.GetComponent<IItem>();
+//				if ( goChecked != null) {
+//					Items.Add(goChecked);
+//				}
+//			}
+
 	}
 	
 	
