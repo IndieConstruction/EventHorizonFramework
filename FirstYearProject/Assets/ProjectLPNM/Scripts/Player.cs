@@ -12,5 +12,14 @@ public class Player : MonoBehaviour {
 	void Update () {
 	
 	}
+<<<<<<< HEAD
 }
 }
+=======
+	void FixedUpdate(){
+
+	
+	}
+	}
+}
+>>>>>>> 226fc758a27a012b0a83b8541f2e635b5b07e092
