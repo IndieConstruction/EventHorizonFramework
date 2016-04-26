@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 		public string Letter;
 	
 	void Start(){
-		Letter = "A";
+		//Letter = "A";
 	}
 }
 }

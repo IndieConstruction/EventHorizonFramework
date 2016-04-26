@@ -3,6 +3,7 @@ using System.Collections;
 namespace EH.LPNM{
 public class CollisionController : MonoBehaviour {
 	
+	
 	int DistanceX = 9; //
 	int DistanceY = 19; //
 	
@@ -24,13 +25,17 @@ public class CollisionController : MonoBehaviour {
 			Player p = gameObject.GetComponent<Player>();
 			Letter letter = other.gameObject.GetComponent<Letter>();
 			///
+			if (letter != null){
 			if(p.Letter == letter.IDLetter){
 
 				float distanceResult = Vector3.Distance(p.transform.position, letter.transform.position);
 				int PointsToadd = calculate(distanceResult);
 				Debug.Log("Lettera è = ed è a distanza di : "  + distanceResult + "Punteggio è : " + PointsToadd);
 			}
-
+			else {
+				Debug.Log ("Inaspettato");
+			}
+			}
 	}
 
 

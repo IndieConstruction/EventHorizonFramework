@@ -2,14 +2,12 @@
 using System.Collections;
 namespace EH.LPNM{
 public class InputController : MonoBehaviour {
-		public float speed = 5;
+		public int speed = 5;
+		public float force;
 		public string TagName = "Terrain";
-		Transform t;
-		//Vector3 startPosition;
 		Transform target;
 		
 		void Start() {
-			t = transform;
 			target = transform;
 		}
 	
@@ -24,26 +22,26 @@ public class InputController : MonoBehaviour {
 				RaycastHit hit;
 				
 				if (Physics.Raycast(ray, out hit)) {
-					if (hit.collider.gameObject.tag != TagName)
+					if (hit.collider.gameObject.tag != TagName){
 						return;
-
+					}
 					target.position = hit.point;
 					Debug.Log ("Sto Raycatando");
-
+					
 				}
 			}
-			Move ();
+			//Move ();
 	}
-		void Move () {
-			float speed = 5.0f;
-			float translationZ = Input.GetAxisRaw("Vertical") *speed;
-			float translationX = Input.GetAxisRaw("Horizontal") * speed;
-			translationZ *= Time.deltaTime;
-			translationX *= Time.deltaTime;
-			
-			transform.Translate(translationX, 0, 0);
-			transform.Translate(0, translationZ, 0);
+//		void Move () {
+//			float speed = 5.0f;
+//			float translationZ = Input.GetAxisRaw("Vertical") *speed;
+//			float translationX = Input.GetAxisRaw("Horizontal") * speed;
+//			translationZ *= Time.deltaTime;
+//			translationX *= Time.deltaTime;
+//			
+//			transform.Translate(translationX, 0, 0);
+//			transform.Translate(0, translationZ, 0);
 			
 		}
+	
 	}
-}
