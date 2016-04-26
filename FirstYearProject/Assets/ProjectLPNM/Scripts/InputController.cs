@@ -3,18 +3,12 @@ using System.Collections;
 namespace EH.LPNM{
 public class InputController : MonoBehaviour {
 		public int speed = 5;
-		public float force;
 		public string TagName = "Terrain";
 		Transform target;
 		
 		void Start() {
 			target = transform;
 		}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void FixedUpdate(){
 			if (Input.GetMouseButtonDown(0)) {

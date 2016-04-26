@@ -12,6 +12,7 @@ public class RoadManager : MonoBehaviour   {
 		//public int MaxRoadsInGame = 6;
 		public GameObject [] RoadMesh;
 		float RoadLenght = 10;
+		public float speed =3;
 		/// <summary>
 		/// Lista di GameObject in scena.
 		/// </summary>
@@ -26,7 +27,7 @@ public class RoadManager : MonoBehaviour   {
 		}
 		
 		void Update(){
-			float speed =15;
+			//float speed =3;
 			transform.Translate (Vector3.back * Time.deltaTime * speed);
 
 		}
@@ -43,10 +44,10 @@ public class RoadManager : MonoBehaviour   {
 			objectToReposition.transform.position =new Vector3 (ActualRoadPosition.x,ActualRoadPosition.y- (RoadLenght*2), ActualRoadPosition.z );
 		}
 		
-		public void OnTriggerEnter(Collider other){
-
-			Reposition (this.gameObject);
-		}
+//		public void OnTriggerEnter(Collider other){
+//
+//			Reposition (this.gameObject);
+//		}
 		
 		
 		

@@ -24,7 +24,7 @@ public class CollisionController : MonoBehaviour {
 			///
 			Player p = gameObject.GetComponent<Player>();
 			Letter letter = other.gameObject.GetComponent<Letter>();
-			///
+			//
 			if (letter != null){
 			if(p.Letter == letter.IDLetter){
 
