@@ -4,8 +4,8 @@ namespace EH.LPNM{
 public class CollisionController : MonoBehaviour {
 	
 	
-	int DistanceX = 9; //
-	int DistanceY = 19; //
+	int DistanceX = 1; 
+	int DistanceY = 2; 
 	
 		void Start () {
 
