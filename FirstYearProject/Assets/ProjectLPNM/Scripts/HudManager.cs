@@ -4,31 +4,40 @@ using UnityEngine.UI;
 namespace EH.LPNM{
 public class HudManager : MonoBehaviour {
 
-	Text[] texts ;
-	public Text Points;
-	public Text Timer;
+	
+	public Text ScoreText;
+	public Text BonusVoteText;
+		public Text PointDistanceText;
 	public GameController gc;
-	//public CollisionController cc;
+	//public int scoreCounter;
+	public bool isEnable = false;
 
-	bool isEnable;
+	void Start(){
+			ScoreText.text ="Score : " + 0;
+			//BonusEffects.text = "";	
+
+	}
 	void Awake(){
 		
-		texts = GetComponentsInChildren<Text> (); 
-		Points = texts [0];
-		Timer = texts [1];
+
 		
 	}
 	void Update () {
-		if (isEnable) {
-			UpdateHud ();
+			if(gc.scoreCounter == 10)
+				Debug.Log("YouWin");
+		}
+	
+	public void UpdateHud (string textScore){
+		ScoreText.text ="Score : " + gc.scoreCounter ;
+	}
+	
+	public void OnCollisionVote(string BonusVote, string PointDistance){
+		if(isEnable == true){
+			BonusVoteText.text = " : " + BonusVote  ;
+				PointDistanceText.text = " : " + PointDistance;
 		}
 	}
-	
-	void UpdateHud (){
-		//Points.text = "Points : " + cc. ;
-		
-		Timer.text = "Timer : " + gc.GameTimer;
+
 	}
-	
 }
-}
+

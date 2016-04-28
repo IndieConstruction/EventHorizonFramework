@@ -5,11 +5,18 @@ public class GameController : MonoBehaviour {
 	
 	public Player p; 
 	public int Level ;
-	public GameObject[] ObstacleLettersPrefabs;
+//	public GameObject[] ObstacleLettersPrefabs;
 	public GameObject[] PlayerPrefabs;
 	Vector3 posPlayer;
 	public float GameTimer;
-	private int Points;
+	public int scoreCounter;
+	public int ScoreCounter {
+			get{return scoreCounter;}
+			set{scoreCounter = value;
+				Hd.UpdateHud("Score :" +scoreCounter);
+			}
+		}
+	public HudManager Hd;
 	
 	//public Transform[] LettersSpawnPoints;
 	//public float CounterXObstacle;
@@ -28,6 +35,7 @@ public class GameController : MonoBehaviour {
 			}
 			else {
 				Debug.Log("Tempo Scaduto");
+				GameTimer = 0;
 			}
 //			if(TimerXObstacle >=CounterXObstacle){
 //			RandomSpawnObstacle();
@@ -39,7 +47,7 @@ public class GameController : MonoBehaviour {
 			if(p==null){
 				p =FindObjectOfType<Player>();
 			}
-			ChangeShape ();
+
 		}
 
 	
@@ -70,50 +78,34 @@ public class GameController : MonoBehaviour {
 	
 
 
-		/// <summary>
-		/// Cambia la forma del player
-		/// </summary>
-		void ChangeShape(){
-			//Salva la posizione del player.
-
-			//Vector3 posPlayer= p.gameObject.transform.position;
-			if (Input.GetKeyUp (KeyCode.A)) {
-			Vector3 posPlayer= p.gameObject.transform.position;
-				//ciclo la lunghezza dell'array
-				for (int i = 0; i < PlayerPrefabs.Length; i++) { 
-					//restituisco il risulato come un gameobject
-					GameObject PrefabShape = PlayerPrefabs [i].gameObject;
-					Player RightPlayer = PrefabShape.GetComponent<Player> ();
-					if (RightPlayer.Letter == "A") {
-						//p.gameObject.SetActive(false);
-						Destroy (p.gameObject);
-
-						Spawn (RightPlayer.gameObject, posPlayer);
-						Debug.Log ("A");
-					
-					}
-
-						
-				}
-			}
-			if (Input.GetKeyUp (KeyCode.M)) {
-				//salvo la posizione del player
-				Vector3 posPlayer = p.gameObject.transform.position;
-				//ciclo la lunghezza dell'array
-				for (int i = 0; i < PlayerPrefabs.Length; i++) { 
-					//restituisco il risulato come un gameobject
-					GameObject PrefabShape = PlayerPrefabs [i].gameObject;
-					Player RightPlayer = PrefabShape.GetComponent<Player> ();
-					if (RightPlayer.Letter == "M"){
-						//p.gameObject.SetActive(false);
-						Destroy (p.gameObject);
-						Spawn(RightPlayer.gameObject, posPlayer);
-						Debug.Log ("M");
-						}
-				}
-			}
+		 enum OnCollisionPoint
+		{Perfect,
+			Good,
+			Ouch
 		}
-		void Multiplier(){}
+		/// <summary>
+		/// Valuta il punteggio e lo assegna in base al voto
+		/// </summary>
+		public void OnPointsToAdd (CollisionController.Vote vote, float distancePoint){
+	
+			switch (vote) {
+			case CollisionController.Vote.Perfect :
+				scoreCounter = scoreCounter +2;
+				break;
+			case CollisionController.Vote.Good:
+				scoreCounter = scoreCounter++;
+				break;
+			case CollisionController.Vote.poor:
+				break;
+			case CollisionController.Vote.wrongletter:
+				scoreCounter = scoreCounter-1;
+				break;
+			default:
+				break;
+			}
+			Hd.OnCollisionVote(vote.ToString(), "");
+		}
+
 	}
 }
 

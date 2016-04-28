@@ -3,7 +3,8 @@ using System.Collections;
 namespace EH.LPNM{
 public class CollisionController : MonoBehaviour {
 	
-	
+	public GameController gc;
+	//public HudManager HD;
 	int DistanceX = 1; 
 	int DistanceY = 2; 
 	
@@ -29,36 +30,38 @@ public class CollisionController : MonoBehaviour {
 			if(p.Letter == letter.IDLetter){
 
 				float distanceResult = Vector3.Distance(p.transform.position, letter.transform.position);
-				int PointsToadd = calculate(distanceResult);
-				Debug.Log("Lettera è = ed è a distanza di : "  + distanceResult + "Punteggio è : " + PointsToadd);
-			}
-			else {
-				Debug.Log ("Inaspettato");
+				Vote vote = calculate(distanceResult);
+					Debug.Log("Lettera è = ed è a distanza di : "  + distanceResult + "Punteggio è : " + vote);
+			}else {
+					Vote vote = Vote.wrongletter;
+
+				Debug.Log ("Lettera è sbagliata");
 			}
 			}
 	}
-
-
-	int calculate (float distanceResult){
+		public enum Vote
+		{Perfect,
+			Good,
+			poor,
+			wrongletter,
 			
+		}
+
+
+	Vote calculate (float distanceResult){
+
 		if (distanceResult <= DistanceX) {
 				Debug.LogFormat ("Perfect! {0} ", distanceResult); //format permette di mettere le graffe, e di riempirle con cio' che scrivo dopo
-				return 2;
-		//punteggio,suono etc.
-			
-		}
-			else if (distanceResult>DistanceX && distanceResult<DistanceY ) { 
+				gc.OnPointsToAdd(Vote.Perfect,distanceResult);
+				return Vote.Perfect;
+		}else if (distanceResult>DistanceX && distanceResult<DistanceY ) { 
 				Debug.LogFormat ("Good! {0} ", distanceResult); 
-				return 1;
-			//punteggio,suono etc.
-		}
-			else {
-				Debug.LogFormat ("Che schifo! {0}",distanceResult); 
-				return 0;}
-			//punteggio,suono etc.
-		
+				return Vote.Good;	
+		}else{Debug.LogFormat ("Che schifo! {0}",distanceResult); 
+				return Vote.poor;
+			}
 		}
 
 	}
-}
+	}
 

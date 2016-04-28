@@ -14,5 +14,8 @@ public class Letter : MonoBehaviour {
 	void Update () {
 			transform.Translate (Vector3.back * Time.deltaTime * speed);
 	}
+		void OnTriggerEnter(Collider other){
+			this.gameObject.SetActive(false);
+		}
 }
 }
