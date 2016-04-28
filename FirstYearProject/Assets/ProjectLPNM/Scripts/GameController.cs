@@ -3,25 +3,38 @@ using System.Collections;
 namespace EH.LPNM{
 public class GameController : MonoBehaviour {
 	
-	public Player p; 
+	Player p;
+	Letter l;
 	public int Level ;
 //	public GameObject[] ObstacleLettersPrefabs;
-	public GameObject[] PlayerPrefabs;
+//	public GameObject[] PlayerPrefabs;
 	Vector3 posPlayer;
 	public float GameTimer;
 	public int scoreCounter;
-	public int ScoreCounter {
-			get{return scoreCounter;}
-			set{scoreCounter = value;
-				Hd.UpdateHud("Score :" +scoreCounter);
-			}
-		}
+	public string BonusScore;
+	public float DistanceResult;
+//	public int ScoreCounter {
+//			get{return scoreCounter;}
+//			set{scoreCounter = value;
+//				Hd.UpdateHud("Score :" +scoreCounter);
+//			}
+//		}
 	public HudManager Hd;
 	
 	//public Transform[] LettersSpawnPoints;
 	//public float CounterXObstacle;
 	//float TimerXObstacle;
 	// Use this for initialization
+	
+	void Awake(){
+			if(p==null){
+				p =FindObjectOfType<Player>();
+			}
+			if(l == null){
+				l = FindObjectOfType<Letter>();
+			}
+	}
+
 	void Start () {
 	//	TimerXObstacle = 0;
 		//p = GetComponent<Player>();
@@ -44,10 +57,6 @@ public class GameController : MonoBehaviour {
 //			TimerXObstacle = 0;
 //			}
 //			TimerXObstacle = TimerXObstacle +Time.deltaTime;
-			if(p==null){
-				p =FindObjectOfType<Player>();
-			}
-
 		}
 
 	
@@ -87,23 +96,35 @@ public class GameController : MonoBehaviour {
 		/// Valuta il punteggio e lo assegna in base al voto
 		/// </summary>
 		public void OnPointsToAdd (CollisionController.Vote vote, float distancePoint){
-	
+
 			switch (vote) {
 			case CollisionController.Vote.Perfect :
 				scoreCounter = scoreCounter +2;
+				BonusScore = "PERFECTOOOOOO!";
+				Hd.UpdateHud();
+
 				break;
 			case CollisionController.Vote.Good:
-				scoreCounter = scoreCounter++;
+				scoreCounter = scoreCounter +1;
+				BonusScore = "SEI CIECO!!";
+				Hd.UpdateHud();
+
 				break;
-			case CollisionController.Vote.poor:
+			case CollisionController.Vote.Poor:
+				scoreCounter --;
+				BonusScore = "FAI CACARE!!!";
+				Hd.UpdateHud();
 				break;
-			case CollisionController.Vote.wrongletter:
-				scoreCounter = scoreCounter-1;
+			case CollisionController.Vote.wrongLetter:
+				scoreCounter = 0;
+				Hd.UpdateHud();
+				BonusScore = "RITIRATI!";
+
 				break;
 			default:
 				break;
 			}
-			Hd.OnCollisionVote(vote.ToString(), "");
+			Hd.OnCollisionVote(BonusScore, DistanceResult);
 		}
 
 	}

@@ -7,10 +7,10 @@ public class HudManager : MonoBehaviour {
 	
 	public Text ScoreText;
 	public Text BonusVoteText;
-		public Text PointDistanceText;
+	public Text PointDistanceText;
 	public GameController gc;
 	//public int scoreCounter;
-	public bool isEnable = false;
+	//public bool isEnable = false;
 
 	void Start(){
 			ScoreText.text ="Score : " + 0;
@@ -27,15 +27,14 @@ public class HudManager : MonoBehaviour {
 				Debug.Log("YouWin");
 		}
 	
-	public void UpdateHud (string textScore){
+	public void UpdateHud (){
 		ScoreText.text ="Score : " + gc.scoreCounter ;
 	}
 	
-	public void OnCollisionVote(string BonusVote, string PointDistance){
-		if(isEnable == true){
-			BonusVoteText.text = " : " + BonusVote  ;
-				PointDistanceText.text = " : " + PointDistance;
-		}
+	public void OnCollisionVote(string BonusText, float distanceResult){
+		BonusVoteText.text = "  " + BonusText  ;
+		PointDistanceText.text = "DistancePoint :  " + distanceResult;
+		
 	}
 
 	}
