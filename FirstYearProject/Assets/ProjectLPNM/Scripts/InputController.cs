@@ -76,9 +76,10 @@ namespace EH.LPNM{
 			p.MeshChange(KeyCode.M.ToString());
 			Debug.Log(KeyCode.M.ToString());
 		}
-		if (Input.GetKeyUp (KeyCode.Q)) {
-			p.MeshChange("Q");
-			Debug.Log(KeyCode.Q.ToString());
+		if (Input.GetKeyUp (KeyCode.V)) {
+			p.Letter =("V");
+			p.MeshChange("V");
+			Debug.Log(KeyCode.V.ToString());
 		}
 		if (Input.GetKeyUp (KeyCode.W)) {
 			p.MeshChange(KeyCode.W.ToString());
@@ -102,6 +103,7 @@ namespace EH.LPNM{
 			
 		}
 		if (Input.GetKeyUp (KeyCode.X)) {
+			p.Letter = ("X");
 			p.MeshChange("X");
 			Debug.Log(KeyCode.X.ToString());
 		}

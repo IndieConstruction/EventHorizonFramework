@@ -100,25 +100,29 @@ public class GameController : MonoBehaviour {
 			switch (vote) {
 			case CollisionController.Vote.Perfect :
 				scoreCounter = scoreCounter +2;
-				BonusScore = "PERFECTOOOOOO!";
+				BonusScore = "PERFECT!";
 				Hd.UpdateHud();
 
 				break;
 			case CollisionController.Vote.Good:
 				scoreCounter = scoreCounter +1;
-				BonusScore = "SEI CIECO!!";
+				BonusScore = "GOOD!";
 				Hd.UpdateHud();
 
 				break;
 			case CollisionController.Vote.Poor:
-				scoreCounter --;
-				BonusScore = "FAI CACARE!!!";
+				if(scoreCounter >=1){
+					scoreCounter --;
+				}else {
+						scoreCounter = 0;
+					}
+				BonusScore = "POOR!";
 				Hd.UpdateHud();
 				break;
 			case CollisionController.Vote.wrongLetter:
 				scoreCounter = 0;
 				Hd.UpdateHud();
-				BonusScore = "RITIRATI!";
+				BonusScore = "WRONG LETTER!";
 
 				break;
 			default:
@@ -128,7 +132,7 @@ public class GameController : MonoBehaviour {
 		}
 
 	}
-}
+	}
 
 	
 					

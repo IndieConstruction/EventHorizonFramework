@@ -29,10 +29,10 @@ public class Player : MonoBehaviour {
 			case "A":
 				rightMeshLetter.sharedMesh = MeshesLetter[1].sharedMesh; 
 				break;
-			case "Q":
+			case "V":
 				rightMeshLetter.sharedMesh = MeshesLetter[2].sharedMesh; 
 				break;
-			case "W":
+			case "X":
 				rightMeshLetter.sharedMesh = MeshesLetter[3].sharedMesh; 
 				break;
 			case "E":
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
 			case "Z":
 				rightMeshLetter.sharedMesh = MeshesLetter[7].sharedMesh; 
 				break;
-			case "X":
+			case "W":
 				rightMeshLetter.sharedMesh = MeshesLetter[8].sharedMesh; 
 				break;
 			case "C":
@@ -59,6 +59,4 @@ public class Player : MonoBehaviour {
 			}
 		}
 	}
-
-
 	}

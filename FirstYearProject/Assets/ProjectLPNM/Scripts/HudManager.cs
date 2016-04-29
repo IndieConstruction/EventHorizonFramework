@@ -14,7 +14,6 @@ public class HudManager : MonoBehaviour {
 
 	void Start(){
 			ScoreText.text ="Score : " + 0;
-			//BonusEffects.text = "";	
 
 	}
 	void Awake(){

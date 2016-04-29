@@ -5,7 +5,7 @@ namespace EH.LPNM{
 public class RoadManager : MonoBehaviour   {
 
 
-
+		public GameController gc;
 		/// <summary>
 		/// Indica il numero di Road in scena
 		/// </summary>
@@ -27,9 +27,17 @@ public class RoadManager : MonoBehaviour   {
 		}
 		
 		void Update(){
-			//float speed =3;
+			if(gc.GameTimer ==0 && gc.GameTimer <= 10){
+				speed = 3;
+			}
+			if (gc.GameTimer >=10 && gc.GameTimer <= 15) {
+				speed = 5;
+			}
+			if 
+			(gc.GameTimer >= 25){
+				speed = 10;
+			}
 			transform.Translate (Vector3.back * Time.deltaTime * speed);
-
 		}
 		
 
