@@ -17,7 +17,7 @@ public class ColliderController : MonoBehaviour {
 	}
 	void OnTriggerEnter (Collider other) {
 
-	Player p = gameObject.GetComponent<Player>();
+	Player p = gameObject.GetComponentInParent<Player>();
 	
 
 		IEffector effector = other.gameObject.GetComponent<IEffector>();
