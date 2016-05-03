@@ -3,9 +3,10 @@ using System.Collections;
 
 namespace EH.Project404{
 public class Player : MonoBehaviour {
+		Animator animator;
 		public int PlayerDimension;
-		public bool isJumping = false;
-		float speed = 450;
+		public int life=1;
+		public float JumpSpeed = 450;
 		Rigidbody rb;
 		public int BonusCounter;
 		public int BonusStadio1;
@@ -15,9 +16,10 @@ public class Player : MonoBehaviour {
 		public int BonusStadio5;
 	// Use this for initialization
 	void Start () {
-			rb = gameObject.GetComponent<Rigidbody> ();
+			rb = gameObject.GetComponentInChildren<Rigidbody> ();
 			PlayerDimension = 1;
 			BonusCounter = 0;
+			animator = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -28,22 +30,20 @@ public class Player : MonoBehaviour {
 				Vector3 vector = new Vector3(0.1f, 0.1f, 0.1f);
 			ModifyScale (vector);
 			}
-			if (isJumping == true) {
-				Jump();
-			}
+
 
 	}
 
 		//movimento della sfera
 	void Move () {
 			float speed = 4.0f;
-			//float translationZ = Input.GetAxisRaw("Vertical") * speed;
+
 			float translationX = Input.GetAxisRaw("Horizontal") * speed;
 			//translationZ *= Time.deltaTime;
 			translationX *= Time.deltaTime;
 			
 			transform.Translate(translationX, 0, 0);
-			transform.Rotate (Vector3.right * Time.deltaTime * speed *10);
+			//transform.Rotate (Vector3.right * Time.deltaTime * speed *10);
 	
 		}
 
@@ -59,8 +59,13 @@ public class Player : MonoBehaviour {
 			transform.localScale -= vector;
 
 		}
+		public void Falling () {
+			rb.useGravity = true;
+			Debug.Log("gravity");
+		}
 		public void Jump () {
-			rb.AddForce (Vector3.up * Time.deltaTime * speed);
+			animator.SetTrigger("Jump");
+
 		}
 	}
 }

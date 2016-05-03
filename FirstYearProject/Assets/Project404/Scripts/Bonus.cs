@@ -36,23 +36,23 @@ public class Bonus : MonoBehaviour, IItem, IEffector,IMove {
 			}
 			if (p.BonusCounter > p.BonusStadio1 && p.BonusCounter <=p.BonusStadio2) {
 
-				p.transform.localScale += new Vector3 (0.3f, 0.3f, 0.3f);
-				p.PlayerDimension ++;
+				p.transform.localScale = new Vector3 (1.3f, 1.3f, 1.3f);
+				p.PlayerDimension =1;
 			}
-			if (p.BonusCounter >p.BonusStadio2 && p.BonusCounter <=p.BonusStadio3) {
+			else if (p.BonusCounter >p.BonusStadio2 && p.BonusCounter <=p.BonusStadio3) {
 
-				p.transform.localScale += new Vector3 (0.3f, 0.3f, 0.3f);
-				p.PlayerDimension ++;
+				p.transform.localScale = new Vector3 (1.6f, 1.6f, 1.6f);
+				p.PlayerDimension =2;
 			}
-			if (p.BonusCounter >p.BonusStadio3 && p.BonusCounter <=p.BonusStadio4) {
+			else if (p.BonusCounter >p.BonusStadio3 && p.BonusCounter <=p.BonusStadio4) {
 				
-				p.transform.localScale += new Vector3 (0.3f, 0.3f, 0.3f);
-				p.PlayerDimension ++;
+				p.transform.localScale = new Vector3 (1.9f, 1.9f, 1.9f);
+				p.PlayerDimension =3;
 			}
-			if (p.BonusCounter >p.BonusStadio4 && p.BonusCounter <=p.BonusStadio5) {
+			else if (p.BonusCounter >p.BonusStadio4 && p.BonusCounter <=p.BonusStadio5) {
 				
-				p.transform.localScale += new Vector3 (0.3f, 0.3f, 0.3f);
-				p.PlayerDimension ++;
+				p.transform.localScale = new Vector3 (2.2f, 2.2f, 2.2f);
+				p.PlayerDimension =4;
 			}
 			}
 		void Update(){
@@ -61,7 +61,7 @@ public class Bonus : MonoBehaviour, IItem, IEffector,IMove {
 		
 		public void Movement () {
 			float speed =15;
-			transform.Translate (Vector3.back * Time.deltaTime * speed);
+			transform.Translate (Vector3.right* Time.deltaTime * speed);
 		}
 		}
 
