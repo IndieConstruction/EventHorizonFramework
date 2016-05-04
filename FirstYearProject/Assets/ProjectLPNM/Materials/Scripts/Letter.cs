@@ -13,18 +13,18 @@ public class Letter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			if(gc.GameTimer ==0 && gc.GameTimer <= 10){
-				speed = 3;
-			}
-			if (gc.GameTimer >=10 && gc.GameTimer <= 15) {
-				speed = 5;
-			}
-			if 
-				(gc.GameTimer >= 25){
-				speed = 10;
-			}
-			transform.Translate (Vector3.back * Time.deltaTime * speed);
-		}
+//			if(gc.Multiplier ==0 && gc.Multiplier <= 2){
+//				speed = 3;
+//			}
+//			if (gc.Multiplier >=3 && gc.Multiplier <= 5) {
+//				speed = 5;
+//			}
+//			if 
+//			(gc.Multiplier >= 5){
+//				speed = 10;
+//			}
+//			transform.Translate (Vector3.back * Time.deltaTime * speed);
+	}
 	
 		void OnTriggerEnter(Collider other){
 			this.gameObject.SetActive(false);

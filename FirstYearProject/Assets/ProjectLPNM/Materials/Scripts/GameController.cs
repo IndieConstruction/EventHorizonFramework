@@ -6,13 +6,16 @@ public class GameController : MonoBehaviour {
 	Player p;
 	Letter l;
 	public int Level ;
+	public int PlayerLife;
 //	public GameObject[] ObstacleLettersPrefabs;
 //	public GameObject[] PlayerPrefabs;
 	Vector3 posPlayer;
 	public float GameTimer;
-	public int scoreCounter;
-	public string BonusScore;
-	public float DistanceResult;
+	public int scoreCounter; // Punteggio del gioco
+	public int Score4NextLevel;
+	public string BonusScore; 
+	public float DistanceResult; // Distanza tra il punto di collisone e la lettera
+	public int Multiplier;// moltiplicatore generico
 //	public int ScoreCounter {
 //			get{return scoreCounter;}
 //			set{scoreCounter = value;
@@ -27,6 +30,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	
 	void Awake(){
+			Multiplier = 0;
 			DontDestroyOnLoad(this.gameObject);
 
 			if(p==null){
@@ -38,7 +42,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Start () {
-	//	TimerXObstacle = 0;
+		//	TimerXObstacle = 0;
 		//p = GetComponent<Player>();
 			GameTimer = 0;
 	}	
@@ -102,28 +106,32 @@ public class GameController : MonoBehaviour {
 
 			switch (vote) {
 			case CollisionController.Vote.Perfect :
-				scoreCounter = scoreCounter +2;
+				Multiplier = Multiplier +2;
+				scoreCounter = scoreCounter +1000* Multiplier;
 				BonusScore = "PERFECT!";
 				Hd.UpdateHud();
 
 				break;
 			case CollisionController.Vote.Good:
-				scoreCounter = scoreCounter +1;
+				Multiplier = Multiplier +1;
+				scoreCounter = scoreCounter +500*Multiplier;
 				BonusScore = "GOOD!";
 				Hd.UpdateHud();
 
 				break;
 			case CollisionController.Vote.Poor:
-				if(scoreCounter >=1){
-					scoreCounter --;
-				}else {
-						scoreCounter = 0;
-					}
+				Multiplier = 0;
+//				if(scoreCounter >=1){
+//					scoreCounter --;
+//				}else {
+//						scoreCounter = 0;
+//					}
 				BonusScore = "POOR!";
 				Hd.UpdateHud();
 				break;
 			case CollisionController.Vote.wrongLetter:
-				scoreCounter = 0;
+				Multiplier = 0;
+				PlayerLife --;
 				Hd.UpdateHud();
 				BonusScore = "WRONG LETTER!";
 

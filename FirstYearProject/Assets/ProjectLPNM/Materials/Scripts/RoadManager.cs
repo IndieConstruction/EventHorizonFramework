@@ -12,7 +12,12 @@ public class RoadManager : MonoBehaviour   {
 		//public int MaxRoadsInGame = 6;
 		public GameObject [] RoadMesh;
 		float RoadLenght = 10;
-		public float speed =3;
+		public int speedA ;
+		public int speedB ;
+		public int speedC ;
+		public int speedD ;
+		public int speedE ;
+		int speed;
 		/// <summary>
 		/// Lista di GameObject in scena.
 		/// </summary>
@@ -27,18 +32,24 @@ public class RoadManager : MonoBehaviour   {
 		}
 		
 		void Update(){
-			if(gc.GameTimer ==0 && gc.GameTimer <= 10){
-				speed = 3;
+			if(gc.Multiplier ==0 && gc.Multiplier <= 2){
+				speed = speedA;
 			}
-			if (gc.GameTimer >=10 && gc.GameTimer <= 15) {
-				speed = 5;
+			if (gc.Multiplier >=3 && gc.Multiplier <= 4) {
+				speed = speedB;
 			}
-			if 
-			(gc.GameTimer >= 25){
-				speed = 10;
+			if (gc.Multiplier >=5 && gc.Multiplier <= 6) {
+				speed = speedC;
+			}
+			if (gc.Multiplier >=7 && gc.Multiplier <= 8) {
+				speed = speedD;
+			}
+			if (gc.Multiplier >=9 && gc.Multiplier <= 10) {
+				speed = speedE;
 			}
 			transform.Translate (Vector3.back * Time.deltaTime * speed);
-		}
+			}
+
 		
 
 		/// <summary>
@@ -56,8 +67,7 @@ public class RoadManager : MonoBehaviour   {
 //
 //			Reposition (this.gameObject);
 //		}
+
 		
 		
-		
-	}
-}
+	}}
