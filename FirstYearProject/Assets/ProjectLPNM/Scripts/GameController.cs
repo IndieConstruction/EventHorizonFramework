@@ -56,18 +56,19 @@ public class GameController : MonoBehaviour {
 				Debug.Log("Tempo Scaduto");
 				GameTimer = 0;
 			}
-//			if(TimerXObstacle >=CounterXObstacle){
-//			RandomSpawnObstacle();
-//			Debug.Log ("Sto Spawnando");
-//		
-//			TimerXObstacle = 0;
-//			}
-//			TimerXObstacle = TimerXObstacle +Time.deltaTime;
-		}
+            //if (TimerXObstacle >= CounterXObstacle)
+            //{
+            //    RandomSpawnObstacle();
+            //    Debug.Log("Sto Spawnando");
 
-	
-	//Spawn generale
-	public void Spawn(GameObject objectToSpawn, Vector3 positionToSpawn){
+            //    TimerXObstacle = 0;
+            //}
+            //TimerXObstacle = TimerXObstacle + Time.deltaTime;
+        }
+
+
+        //Spawn generale
+        public void Spawn(GameObject objectToSpawn, Vector3 positionToSpawn){
 		Instantiate (objectToSpawn, positionToSpawn, objectToSpawn.transform.rotation);
 			
 	}
@@ -121,11 +122,6 @@ public class GameController : MonoBehaviour {
 				break;
 			case CollisionController.Vote.Poor:
 				Multiplier = 0;
-//				if(scoreCounter >=1){
-//					scoreCounter --;
-//				}else {
-//						scoreCounter = 0;
-//					}
 				BonusScore = "POOR!";
 				Hd.UpdateHud();
 				break;

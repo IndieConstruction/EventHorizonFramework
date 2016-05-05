@@ -5,13 +5,14 @@ namespace EH.LPNM{
 public class RoadManager : MonoBehaviour   {
 
 
-		public GameController gc;
-		/// <summary>
-		/// Indica il numero di Road in scena
-		/// </summary>
-		//public int MaxRoadsInGame = 6;
-		public GameObject [] RoadMesh;
-		float RoadLenght = 10;
+
+        /// <summary>
+        /// Indica il numero di Road in scena
+        /// </summary>
+        //public int MaxRoadsInGame = 6;
+        //public GameObject [] RoadMesh;
+        public GameController gc;
+        float RoadLenght = 10;
 		public int speedA ;
 		public int speedB ;
 		public int speedC ;
@@ -22,8 +23,8 @@ public class RoadManager : MonoBehaviour   {
 		/// Lista di GameObject in scena.
 		/// </summary>
 		List <GameObject> Roads = new List<GameObject>();
-		
-		void Awake (){
+ 
+        void Awake (){
 
 		}
 		
@@ -70,4 +71,5 @@ public class RoadManager : MonoBehaviour   {
 
 		
 		
-	}}
+	}
+}

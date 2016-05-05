@@ -4,8 +4,8 @@ namespace EH.LPNM{
 public class CollisionController : MonoBehaviour {
 	
 	public GameController gc;
-	int DistanceX = 1; 
-	int DistanceY = 2; 
+	public int DistanceX = 1; 
+	public int DistanceY = 2; 
 	
 	void OnTriggerEnter(Collider other){
 			///

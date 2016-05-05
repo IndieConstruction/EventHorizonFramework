@@ -42,13 +42,16 @@ namespace EH.LPNM{
 			//Check if the ray hits any collider
 			if(Physics.Raycast(ray,out hit))
 			{
+				if(hit.collider.gameObject.tag == TagName){
 				//set a flag to indicate to move the gameobject
 				flag = true;
 				//save the click / tap position
 				endPoint = hit.point;
+		
 				//as we do not want to change the y axis value based on touch position, reset it to original y axis value
 				endPoint.y = yAxis;
 				//Debug.Log(endPoint);
+				}
 			}
 			
 		//}

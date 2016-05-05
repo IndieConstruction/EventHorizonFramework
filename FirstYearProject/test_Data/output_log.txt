@@ -1,0 +1,287 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\FirstYearProject\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\FirstYearProject\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\FirstYearProject\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\FirstYearProject\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\FirstYearProject\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\FirstYearProject\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\FirstYearProject\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\FirstYearProject\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\FirstYearProject\test_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.261 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: E:\FirstYearProject\test_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1238 -> priority: 1 
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Poor! 4.397109
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Lettera è sbagliata
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Poor! 3.420459
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Lettera è = ed è a distanza di : 3.420459Punteggio è : Poor
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Good! 1.559624 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Lettera è sbagliata
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+A
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at EH.LPNM.Player.MeshChange (System.String rightLetter) [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.ChangeShape () [0x00000] in <filename unknown>:0 
+  at EH.LPNM.InputController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
