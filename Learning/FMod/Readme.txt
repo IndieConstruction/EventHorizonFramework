@@ -1,0 +1,3 @@
+Esempio di utilizzo di FMod.
+Nella classe in input ci sono le stringhe con i nomi degli eventi FMod che saranno a cura dei sound designer. Internamente i programmatori useranno i riferimenti alle variabili stringa.
+All'interno della classe creeremo tante funzioni pubbliche quanti saranno gli eventi di gioco di interesse per l'audio. All'interno di essi si crererà un'istanza dell'event, si setteranno i parametri e si farà partire il tutto come da esempio.
